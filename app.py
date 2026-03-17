@@ -2,7 +2,7 @@ import streamlit as st
 import pickle
 
 # Load model and vectorizer
-BASE_DIR = os.path.dirname(__file__)
+BASE_DIR = Path.cwd()
 model_path = os.path.join(BASE_DIR, "model.pkl")
 vectorizer_path = os.path.join(BASE_DIR, "vectorizer.pkl")
 
