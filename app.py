@@ -4,12 +4,13 @@ from pathlib import Path
 import os
 
 # Load model and vectorizer
-BASE_DIR = Path.cwd()
+BASE_DIR = Path(__file__).parent
+model_path = BASE_DIR / "spam_model.pkl"
+
+with open(model_path, "rb") as f:
+    model = pickle.load(f)
 model_path = os.path.join(BASE_DIR, "model.pkl")
 vectorizer_path = os.path.join(BASE_DIR, "vectorizer.pkl")
-
-model = pickle.load(open(model_path, "rb"))
-vectorizer = pickle.load(open(vectorizer_path, "rb"))
 
 # Page config
 st.set_page_config(
